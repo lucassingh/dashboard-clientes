@@ -17,7 +17,7 @@ export class EstadisticaClientesComponent implements OnInit {
 	public countEdad = 0;
 	public prom: number;
 	public desvio: number;
-	public mayorEdad: number;
+	public mayorEdad = 0;
 	public nombre: string;
 	public apellido: string;
 	public fechaActual: number;	
@@ -43,8 +43,10 @@ export class EstadisticaClientesComponent implements OnInit {
 
 			this.clienteList.forEach(element => {				
 				this.nombre = element.name;
-				this.apellido = element.apellido;
-				this.mayorEdad = Math.max(element.edad );				
+				this.apellido = element.apellido;				
+				this.mayorEdad = Math.max(element.edad);
+				this.mayorEdad = this.mayorEdad < element.edad ? element.edad : this.mayorEdad;
+				console.log(this.mayorEdad)				
 				this.fechaNac = element.date;
 				this.añoMuerte = new Date(this.fechaNac).getFullYear() + 80;				
 				this.fechaMuerte = new Date(`${this.añoMuerte}`).toLocaleDateString().split(',')[0];				
