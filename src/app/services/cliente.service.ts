@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { AngularFireDatabase,  AngularFireList } from 'angularfire2/database';
-import { Cliente } from '../interface/cliente'
+import { Cliente } from '../interface/cliente';
+import Swal from 'sweetalert2'
 
 @Injectable({
   providedIn: 'root'
@@ -23,7 +24,12 @@ export class ClienteService {
       apellido: cliente.apellido,
       edad: cliente.edad,
       date: cliente.date
-    })
+	})
+	Swal.fire(
+		'Cliente ingresado en firebase',
+		'You clicked the button!',
+		'success'
+	  )
   }
 
   updateCliente(cliente: Cliente) {
@@ -32,10 +38,20 @@ export class ClienteService {
       apellido: cliente.apellido,
       edad: cliente.edad,
       date: cliente.date
-    })
+	})
+	Swal.fire(
+		'Cliente actualizado en firebase',
+		'You clicked the button!',
+		'success'
+	  )
   }
 
   deleteCliente($key:string) {
-    this.clienteList.remove($key);
+	this.clienteList.remove($key);
+	Swal.fire(
+		'Cliente eliminado de firebase',
+		'You clicked the button!',
+		'success'
+	  )
   }
 }

@@ -26,6 +26,7 @@
     "moment": "^2.24.0",
     "rx": "github:Reactive-Extensions/RxJS",
     "rxjs": "~6.2.0",
+    "sweetalert2": "^9.7.1",
     "zone.js": "~0.8.26"
   },
   "devDependencies": {

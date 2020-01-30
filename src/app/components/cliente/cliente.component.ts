@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
+import Swal from 'sweetalert2'
 
 //service
 import { ClienteService } from '../../services/cliente.service'
@@ -23,9 +24,19 @@ export class ClienteComponent implements OnInit {
 
   onSubmit(clienteForm: NgForm) {
     if(clienteForm.value.$key == null) {
-      this.clienteService.insertCliente(clienteForm.value);
+	  this.clienteService.insertCliente(clienteForm.value);
+	  Swal.fire(
+		'Cliente cargado con exito en firebase!',
+		'You clicked the button!',
+		'success'
+	  )
     }else {
-      this.clienteService.updateCliente(clienteForm.value);
+	  this.clienteService.updateCliente(clienteForm.value);
+	  Swal.fire(
+		'Cliente Actualizado con exito!',
+		'You clicked the button!',
+		'success'
+	  )
     }
     this.resetForm(clienteForm);
   }
@@ -33,7 +44,7 @@ export class ClienteComponent implements OnInit {
   resetForm(clienteForm?: NgForm) {
     if(clienteForm != null){
       clienteForm.reset();
-      this.clienteService.selectedCliente = new Cliente();
+	  this.clienteService.selectedCliente = new Cliente();	  
     }
   }
 }
