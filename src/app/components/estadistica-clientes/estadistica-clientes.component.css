@@ -1,0 +1,39 @@
+.card {
+  height: 340px;
+}
+
+.card-edad {
+  background-color: #38D2EB ;
+}
+
+.card-desvio {
+  background-color: #F0E314 ;
+}
+
+.card-datos {
+  background-color:#14F052;
+
+}
+
+.text {
+  font-size: 75px;
+}
+
+.text-persona {
+  font-size: 16px;
+}
+
+.text-años {
+	font-size: 35px;
+}
+
+.alert-msg {
+  margin-top: 60px;
+  padding: 20px;
+  border-radius: 10px;
+  margin-bottom: 50px;
+}
+
+.text-msg {
+  font-size: 16px;
+}

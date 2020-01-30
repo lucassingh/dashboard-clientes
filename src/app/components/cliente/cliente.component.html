@@ -1,0 +1,70 @@
+<div class="container">
+  <div class="row container-form">
+    <div class="col-sm-3"></div>
+    <div class="col-sm-6">
+        <div class="card">
+          <div class="card-body">
+            <form #clienteForm="ngForm" (ngSubmit)="onSubmit(clienteForm)">
+              <input type="hidden" name="$key" #$key="ngModel" [(ngModel)]="clienteService.selectedCliente.$key">
+              <!--Nombre-->
+              <div class="form-group">
+                <input
+                  type="text"
+                  class="form-control"
+                  name="name"
+                  #name="ngModel"
+                  [(ngModel)]="clienteService.selectedCliente.name"
+                  placeholder="Ingrese nombre cliente"
+                  required>
+              </div>
+
+              <!--apellido-->
+              <div class="form-group">
+                <input
+                  type="text"
+                  class="form-control"
+                  name="apellido"
+                  #apellido="ngModel"
+                  [(ngModel)]="clienteService.selectedCliente.apellido"
+                  placeholder="Ingrese apellido cliente"
+                  required>
+              </div>
+
+              <!--Edad-->
+              <div class="form-group">
+                <input
+                  type="number"
+                  class="form-control"
+                  name="edad"
+                  #edad="ngModel"
+                  [(ngModel)]="clienteService.selectedCliente.edad"
+                  placeholder="Ingrese edad cliente"
+                  required>
+              </div>
+
+              <!--Fecha-->
+              <div class="form-group">
+                <label> Fecha nacimiento:</label>
+                <input
+                  type="date"
+                  value="2018-07-22"
+                  class="form-control"
+                  name="date"
+                  #date="ngModel"
+                  [(ngModel)]="clienteService.selectedCliente.date"
+                  placeholder="Ingrese fecha cliente"
+                  required>
+              </div>
+              <div class="form-group mt-3">
+                <button class="btn btn-primary btn-block">Cargar datos</button>
+                <button class="btn btn-warning btn-block" type="reset" (click)="resetForm(clienteForm)">Limpiar datos</button>
+              </div>
+            </form>
+          </div>
+        </div>
+    </div>
+    <div class="col-sm-3"></div>
+  </div>
+</div>
+
+<app-lista-clientes></app-lista-clientes>

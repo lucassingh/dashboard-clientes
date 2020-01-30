@@ -1,0 +1,44 @@
+<div class="container-fluid container-form">
+  <div class="row">
+    <div class="col-4">
+      <div class="card card-edad">
+        <div class="card-body">
+          <h4>Promedio edades clientes </h4>
+          <p class="text">{{prom | number:'0.0-2'}}<span class="text-años">años.</span></p>
+        </div>
+      </div>
+    </div>
+    <div class="col-4">
+      <div class="card card-desvio">
+        <div class="card-body">
+          <h4>Desviacion standar</h4>
+          <p class="text">{{ desvio  | number:'0.0-2' }}<span class="text-años">años.</span></p>
+        </div>
+      </div>
+    </div>
+    <div class="col-4">
+      <div class="card card-datos">
+        <div class="card-body">
+          <h4>Datos de la persona y propable fecha de muerte</h4><br>
+            <ul>
+              <li><p class="text-persona">Nombre: {{nombre}}</p></li>
+              <li> <p class="text-persona">Apellido: {{apellido}}</p></li>
+              <li><p class="text-persona">Edad: {{mayorEdad}}</p></li>
+              <li><p class="text-persona">Fecha naciemiento: {{fechaNac}}</p></li>
+              <li><p class="text-persona">Fecha posible muerte: {{fechaMuerte}}</p></li>
+            </ul>
+       </div>
+      </div>
+    </div>    
+  </div>
+  <div class="row">
+      <div class="col-12 alert-danger alert-msg">
+        <h4>Aclaración</h4>
+          <p class="text-msg">
+            <strong>El cálculo de la probable fecha de muerte es estimado y se calcula de la siguiente manera: <br></strong> 
+            -- Se elige el cliente de mayor edad. <br>
+			-- Se toma un coeficiente fijo que es una expectativa de vida de 80 años y se hace el calculo de acuerdo a la edad ingresada por el usuario <br> 
+          </p>
+      </div>
+    </div>
+</div>

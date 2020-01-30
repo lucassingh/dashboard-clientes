@@ -1,0 +1,37 @@
+<div class="container">
+  <div class="row container-form">
+    <div class="col-sm-3"></div>
+    <div class="col-sm-6">
+        <div class="card">
+          <div class="card-body">
+            <h6>Lista clientes</h6>
+            <table class="table table-sm table-hover">
+              <thead>
+                <tr>
+                  <td>Nombre</td>
+                  <td>Apellido</td>
+                  <td>Edad</td>
+                  <td>Fecha</td>
+                  <td>Editar</td>
+                  <td>Eliminar</td>
+                </tr>
+              </thead>
+              <tbody>
+                <tr *ngFor="let cliente of clienteList">
+                  <td>{{cliente.name}}</td>
+                  <td>{{cliente.apellido}}</td>
+                  <td>{{cliente.edad}}</td>
+                  <td>{{cliente.date}}</td>
+                  <td><button class="btn btn-warning" (click)="onEdit(cliente)">Editar</button></td>
+                  <td><button class="btn btn-danger" (click)="onDelete(cliente.$key)">Eliminar</button></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+    </div>
+    <div class="col-sm-3">
+      
+    </div>
+  </div>
+</div>
